@@ -14,7 +14,7 @@ $(".dropdown-selector .dropdown-list").click(function(e) {
 // query form
 $("#query_form").submit(function(e) {
     e.preventDefault();
-    $('#query_result').html('Sending...');
+    $('#query_result').html('<span>Sending... <img src="img/loader.gif"></span>');
     $.ajax({
         url: '/cgi/peptovar.pl',
         type: 'POST',
@@ -52,8 +52,8 @@ $("#example_pept").click(function(){
 
 $("#example_isoform_id").click(function(){
     $("#query_field").val($("#example_isoform_id").text());
-    $("#input_hidden_field").val('isoform_ID');
-    $("#query_type_value").text('isoform_ID');
+    $("#input_hidden_field").val('transcript_ID');
+    $("#query_type_value").text('transcript_ID');
     $("#length_9").prop('checked', true);
 });
 
@@ -73,4 +73,3 @@ $.ajax({
     alert(data);
   }
 });
-
